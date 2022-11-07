@@ -2,6 +2,9 @@ import card1 from "./assets/imges/card_1.png";
 import card2 from "./assets/imges/card_2.png";
 import card3 from "./assets/imges/card_3.png";
 import card4 from "./assets/imges/card_4.png";
+import card5 from "./assets/imges/card_5.jpg";
+import card6 from "./assets/imges/card_6.jpg";
+import card8 from "./assets/imges/card_8.jpg";
 const cardData = {
   data: [
     {
@@ -45,7 +48,7 @@ const cardData = {
       id: 4,
     },
     {
-      img: card2,
+      img: card5,
       title: "Смартфон Apple iphon",
       price: "7 300 000 сум ",
       price2: "от 2 435 000 сум ",
@@ -55,7 +58,7 @@ const cardData = {
       id: 5,
     },
     {
-      img: card1,
+      img: card6,
       title: "Смартфон Samsung G",
       price: "7 300 000 сум ",
       price2: "от 2 435 000 сум ",
@@ -65,7 +68,7 @@ const cardData = {
       id: 6,
     },
     {
-      img: card2,
+      img: card3,
       title: "Смартфон Apple iphon",
       price: "7 300 000 сум ",
       price2: "от 2 435 000 сум ",
@@ -75,7 +78,7 @@ const cardData = {
       id: 7,
     },
     {
-      img: card3,
+      img: card8,
       title: "Наушники Apple Airpo",
       price: "7 300 000 сум ",
       price2: "от 2 435 000 сум ",

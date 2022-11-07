@@ -1,44 +1,21 @@
-import discount from "../assets/imges/discount.svg";
-import trade from "../assets/imges/trade.svg";
-import GiftIcon from "../assets/icons/GiftIcon";
+import IconsGroup from "./IconsGroup";
 import "./card.css";
 function Card(props) {
   return (
-    <div className="product_card">
+    <div className="product_card group transition-all duration-300 ">
       <div className="card_img relative bg-[#f7f7f7] flex items-center justify-center pt-3 pb-4 rounded-[6px]">
-        <ul className="absolute left-[6px] top-3 flex flex-col gap-[6px]">
-          <li
-            className={
-              props.isGift
-                ? "flex items-center justify-center bg-[#A2AEDB] rounded-[6px] h-7 w-9 cursor-pointer"
-                : "hidden"
-            }
-          >
-            <GiftIcon />
-          </li>
-          <li
-            className={
-              props.percent
-                ? "flex items-center justify-center bg-[#FFBD95] rounded-[6px] h-7 w-9 cursor-pointer"
-                : "hidden"
-            }
-          >
-            <img src={discount} alt="discount" />
-          </li>
-          <li
-            className={
-              props.trade
-                ? "flex items-center justify-center bg-[#F39DBD] rounded-[6px] h-7 w-9 cursor-pointer"
-                : "hidden"
-            }
-          >
-            <img src={trade} alt="img" />
-          </li>
-        </ul>
+        <div className="absolute left-[6px] top-3 z-[999]">
+          <IconsGroup
+            gift={props.gift}
+            percent={props.percent}
+            trade={props.trade}
+            percent2={false}
+          />
+        </div>
         <img
           src={props.card_img}
           alt="card_1"
-          className=" max-w-[107px] max-h-[142px] rounded-lg"
+          className=" max-w-[107px] max-h-[142px] min-h-[140px] rounded-lg transition-all duration-300 group-hover:translate-x-4"
         />
       </div>
       <div className="card_info">

@@ -25,7 +25,7 @@ function StorePage() {
                   card_title={item.title}
                   card_price={item.price}
                   card_discount={item.price2}
-                  isGift={item.gift}
+                  gift={item.gift}
                   percent={item.discount}
                   trade={item.trade}
                 />

@@ -47,3 +47,12 @@
   background: #00c48c;
   border: none;
 }
+.swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background-color: #bbc2d0;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #3d639d !important;
+}

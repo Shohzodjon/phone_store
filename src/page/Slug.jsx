@@ -10,9 +10,14 @@ import StoreIcon from "../assets/icons/StoreIcon";
 import "./slug.css";
 import { useState } from "react";
 import CheckIcon from "../assets/icons/CheckIcon";
+import IconsGroup from "../components/IconsGroup";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
 function Slug() {
   const pram = useParams();
-  console.log(pram.id, "pram");
+  let paramId = Number(pram.id);
 
   const [tabNum, setTabNum] = useState(1);
   const [check1, setCheck1] = useState(false);
@@ -35,13 +40,14 @@ function Slug() {
   const checkFunc4 = () => {
     setCheck4(!check4);
   };
+  const arr = [1, 2, 3, 4];
 
   return (
     <div className="bg-[#F3F5F8] w-full pt-5 px-7  h-full  rounded-[6px] pb-[30px]">
       {cardData.data.map((item) => {
-        if (item.id == pram.id) {
-          return (
-            <>
+        return (
+          <>
+            <div className={item.id === paramId ? "block" : "hidden"}>
               <BreadCrumb last_page={item.title} />
               <div className="bg-white rounded-[16px] mt-[30px] p-[30px] relative">
                 <span className="flex items-center justify-center rounded-full bg-[#FF647C] w-[60px] h-[60px] absolute right-0 -top-6 cursor-pointer">
@@ -52,27 +58,39 @@ function Slug() {
                 </h1>
                 <div className="flex gap-5">
                   <div className="flex-1 max-w-[480px]">
-                    <div className="bg-[#F3F5F8] rounded-[16px] relative py-[54px] flex items-center justify-center !h-[390px]">
-                      <ul className="absolute left-5 top-5 flex flex-col gap-[6px]">
-                        <li className="flex items-center justify-center bg-[#F39DBD] rounded-[6px] h-7 w-9 cursor-pointer">
-                          <img src={trade} alt="img" />
-                        </li>
-                        <li className="flex items-center justify-center bg-[#A2AEDB] rounded-[6px] h-7 w-9 cursor-pointer">
-                          <GiftIcon />
-                        </li>
-                        <li className="flex items-center justify-center bg-[#FFBD95] rounded-[6px] h-7 w-9 cursor-pointer">
-                          <img src={discount} alt="discount" />
-                        </li>
-
-                        <li className="flex items-center justify-center bg-[#AAD9AC] rounded-[6px] h-7 w-9 cursor-pointer">
-                          <Percent />
-                        </li>
-                      </ul>
-                      <img
-                        src={item.img}
-                        alt="slug img"
-                        className="max-w-[198px] max-h-[268px]"
-                      />
+                    <div className="bg-[#F3F5F8] rounded-[16px] relative  !h-[390px]">
+                      <div className="absolute left-5 top-5 z-[9999]">
+                        <IconsGroup
+                          gift={true}
+                          percent={true}
+                          trade={true}
+                          percent2={true}
+                        />
+                      </div>
+                      <Swiper
+                        modules={[Pagination, Autoplay]}
+                        pagination={{ clickable: true }}
+                        spaceBetween={0}
+                        autoplay={true}
+                        loop={true}
+                        slidesPerView={1}
+                        className=" h-[100%] "
+                      >
+                        {arr.map((i) => {
+                          return (
+                            <SwiperSlide
+                              key={i}
+                              className="py-[54px] flex items-center justify-center"
+                            >
+                              <img
+                                src={item.img}
+                                alt="slug img"
+                                className="min-w-[160px] min-h-[260px] max-h-[268px] rounded-md"
+                              />
+                            </SwiperSlide>
+                          );
+                        })}
+                      </Swiper>
                     </div>
                   </div>
                   {/* slider box */}
@@ -213,11 +231,9 @@ function Slug() {
                   </div>
                 </div>
                 {/* end of header flex-box */}
-
                 <h3 className="text-greenColor mt-[30px] text-base font-normal leading-[19px] tracking-[-0.3px]">
                   Акции
                 </h3>
-
                 <ul>
                   <li className="flex justify-between border-b-[1px] border-b-greyColor pb-5 mt-5">
                     <div className="flex gap-4">
@@ -319,14 +335,13 @@ function Slug() {
                     </span>
                   </li>
                 </ul>
-
                 <button className="w-full bg-greenColor py-4 rounded-[26px] text-base font-semibold leading-[19px] tracking-[0.01em] mt-[30px] text-center text-white">
                   Добавить в корзину
                 </button>
               </div>
-            </>
-          );
-        }
+            </div>
+          </>
+        );
       })}
     </div>
   );

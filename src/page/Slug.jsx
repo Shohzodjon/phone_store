@@ -39,7 +39,7 @@ function Slug() {
   return (
     <div className="bg-[#F3F5F8] w-full pt-5 px-7  h-full  rounded-[6px] pb-[30px]">
       {cardData.data.map((item) => {
-        if (item.id === pram.id) {
+        if (item.id == pram.id) {
           return (
             <>
               <BreadCrumb last_page={item.title} />

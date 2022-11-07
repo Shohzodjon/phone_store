@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { BsFillBellFill, BsPersonFill } from "react-icons/bs";
+import BellIcon from "../assets/icons/BellIcon";
+import PersonIcon from "../assets/icons/PersonIcon";
 function Navbar() {
   return (
     <nav className="max-w-[1440px] mx-auto py-[1px] max-h-[70px]">
@@ -12,18 +13,18 @@ function Navbar() {
 
         <div className="flex items-center gap-20">
           <div className="relative cursor-pointer">
-            <span className="w-4 h-4 rounded-full bg-[#00C48C] flex items-center justify-center text-[10px] leading-3 text-white font-semibold absolute -top-2 -right-2">
+            <span className="w-4 h-4 rounded-full bg-greenColor flex items-center justify-center text-[10px] leading-3 text-white font-semibold absolute -top-2 -right-2">
               1
             </span>
-            <BsFillBellFill className="text-lg text-[#BBC2D0]" />
+            <BellIcon />
           </div>
           {/* end of bell */}
-          <div className="flex items-center bg-[#3D639D] w-[292px] h-[70px] pl-[60px] pr-[60px] gap-3 rounded-bl-[30px]">
+          <div className="flex items-center bg-blueColor w-max-content h-[70px] pl-[66px] pr-[60px] gap-3 rounded-bl-[30px]">
             <p className="font-normal text-base leading-[19px] text-white">
               Личный кабинет
             </p>
             <div className="w-8 h-8 flex items-center justify-center bg-white rounded-full">
-              <BsPersonFill />
+              <PersonIcon />
             </div>
           </div>
         </div>

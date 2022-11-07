@@ -3,9 +3,8 @@ import SearchBar from "../components/SearchBar";
 import Card from "../components/Card";
 import cardData from "../data";
 import PaginationArrow from "../assets/icons/PaginationArrow";
-import { useLocation, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 function StorePage() {
-  let location = useLocation();
   return (
     <div className="w-wull !h-full flex-1 bg-[#F3F5F8] rounded-md px-5 py-7 pb-[30px]">
       <BreadCrumb />

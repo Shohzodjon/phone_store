@@ -1,0 +1,63 @@
+.navbar__menu {
+  position: relative;
+}
+.active__line {
+  transition: all 0.3s linear;
+  position: absolute;
+  bottom: -6px;
+  background: #ffd289;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  display: block;
+}
+.navbar__menu:hover .active__line {
+  width: 100%;
+}
+.active__menu .active__line {
+  width: 100%;
+  transition: all 0.3s linear;
+  position: absolute;
+  bottom: -6px;
+  background: #ffd289;
+  left: 0;
+  height: 1px;
+  display: block;
+}
+
+.nav__contact span {
+  transition: all 0.3s linear;
+}
+.nav__contact:hover span {
+  color: #f8b405 !important;
+}
+.nav__contact svg {
+  animation-name: phone-anime;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.nav__contact svg path {
+  transition: all 0.3s linear;
+}
+.nav__contact:hover svg path {
+  fill: #f8b405;
+}
+
+@keyframes phone-anime {
+  0% {
+    transform: scale(0.85);
+  }
+  25% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  75% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(0.85);
+  }
+}

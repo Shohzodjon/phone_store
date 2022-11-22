@@ -10,10 +10,6 @@
   font-family: "Gilroy-Medium", sans-serif;
 }
 .container {
-  max-width: 1320px;
-  margin: 0 auto;
-}
-section {
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
 }

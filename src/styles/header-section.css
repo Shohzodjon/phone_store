@@ -1,0 +1,65 @@
+.header__section {
+  min-height: 813px;
+  background: url("../assets/images/header_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.header__btn button {
+  min-width: 260px;
+  font-weight: 500;
+}
+.header__btn button:first-child::before {
+  opacity: 1;
+}
+.show__social-link {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #ffc42c;
+}
+.social__share {
+  position: absolute;
+  right: 51px;
+  bottom: 113px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all linear 0.4s;
+  filter: blur(2px);
+}
+.social__unactive {
+  opacity: 0;
+  transform: translateX(200%);
+}
+.social__active {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+
+.social__link {
+  width: 58px;
+  height: 58px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0px 0px 4px;
+}
+.social__link svg path {
+  fill: #205694;
+  opacity: 0.8;
+}
+
+.second__section .section__header h2 {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 500;
+}

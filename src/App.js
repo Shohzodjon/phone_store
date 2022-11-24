@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./views/Navbar";
 import Home from "./pages/Home";
+import Footer from "./views/Footer";
 function App() {
   function warm() {
     alert("Its working");
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
         </Routes>
       </div>
+      <Footer />
     </section>
   );
 }

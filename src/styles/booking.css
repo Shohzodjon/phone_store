@@ -1,0 +1,41 @@
+.booking__section {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 80, 153, 0.3),
+      rgba(0, 80, 153, 0.3)
+    ),
+    url(../assets/images/booking.png);
+  background-blend-mode: darken, normal;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.booking__arrow {
+  margin-left: -10px;
+}
+.booking__arrow svg path {
+  fill: #fff;
+}
+.booking__arrow svg {
+  margin-top: 20px;
+}
+.booking__btn button {
+  height: 56px;
+  min-width: 260px;
+  padding: 10px auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.booking__btn button span {
+  font-size: 17px;
+  line-height: 17px;
+  font-weight: 600;
+}
+.booking__btn button:first-child:before {
+  opacity: 1;
+}

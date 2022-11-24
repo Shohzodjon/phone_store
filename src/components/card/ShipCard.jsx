@@ -7,7 +7,7 @@ import "../../styles/ship-card.css";
 
 const ShipCard = (props) => {
   return (
-    <div className="max-w-[420px]">
+    <div className="max-w-[420px] rounded-[10px] overflow-hidden bg-white pb-[22px]">
       <div className="ship__card-img max-w-[420px] max-h-[254px]">
         <img src={props.img__url} alt="ship-img" />
       </div>

@@ -61,3 +61,17 @@
     transform: scale(0.85);
   }
 }
+.nav__menu {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 14px;
+  border-radius: 4.5px;
+}
+
+@media screen and (min-width: 375px) and (max-width: 576px) {
+  .nav__contact svg {
+    width: 16px;
+  }
+  .nav__menu {
+    padding: 6px 12px;
+  }
+}

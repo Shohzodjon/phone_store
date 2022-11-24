@@ -5,6 +5,8 @@ import whatsapp from "../assets/images/whatsapp.svg";
 import wlink from "../assets/images/wlink.svg";
 import TelIcon from "../assets/icons/TelIcon";
 import { Link, NavLink } from "react-router-dom";
+import MenuIcon from "../assets/icons/MenuIcon";
+import CloseIcon from "../assets/icons/CloseIcon";
 import "../styles/navbar.css";
 const Navbar = () => {
   const links = [
@@ -16,13 +18,16 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="w-full pt-5 pb-4 bg-darkBlue">
+    <nav className="w-full py-3 md:py-4 lg:pt-5 lg:pb-4 bg-darkBlue">
       <div className="container">
         <div className="flex items-center justify-between">
-          <Link className="nav__logo max-w-[260px] max-h-11" to="/">
+          <Link
+            className="nav__logo w-[127px] h-[21px] sm:w-[150px] sm:h-7 md:w-[200px] md:h-9  lg:w-[260px] lg:h-11"
+            to="/"
+          >
             <img src={logo} alt="nav-logo" className="w-full" />
           </Link>
-          <ul className="flex items-center gap-8">
+          <ul className="hidden xl:flex  items-center gap-8 ">
             {links.map((item, i) => (
               <li key={i}>
                 <NavLink
@@ -44,14 +49,14 @@ const Navbar = () => {
           <div className="social__contact flex items-center gap-9">
             <a
               href="tel:+7 (978) 050-43-16"
-              className="nav__contact flex items-center gap-2.5"
+              className="nav__contact flex items-center gap-1 md:gap-2.5"
             >
               <TelIcon />
-              <span className="text-white text-base leading-4 font-medium tracking-[0.04em]">
+              <span className="text-white text-[12px] sm:text-sm md:text-base leading-4 font-medium tracking-[0.04em]">
                 +7 (978) 050-43-16
               </span>
             </a>
-            <ul className="flex items-center gap-2.5">
+            <ul className="hidden lg:flex items-center gap-2.5">
               <li>
                 <a href="#">
                   <img src={viber} alt="viber" />
@@ -76,6 +81,13 @@ const Navbar = () => {
                 </a>
               </li>
             </ul>
+          </div>
+
+          <div className="nav__menu flex items-center gap-[5.34px] xl:hidden ">
+            <span className="text-[11px] md:text-sm leading-5 font-medium text-[#FFD289]">
+              МЕНЮ
+            </span>
+            <MenuIcon />
           </div>
         </div>
       </div>

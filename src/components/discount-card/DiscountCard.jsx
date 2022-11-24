@@ -1,6 +1,6 @@
 const DiscountCard = (props) => {
   return (
-    <div className="discount__card max-w-[420px] rounded-[10px] ">
+    <div className="discount__card max-w-[420px] rounded-[10px] bg-white pb-6">
       <div className="discount__img max-h-[254px] w-full">
         <img
           src={props.discount__img}

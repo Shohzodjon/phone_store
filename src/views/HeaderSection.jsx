@@ -3,11 +3,22 @@ import "../styles/header-section.css";
 import thick from "../assets/images/bulut.png";
 import telegram from "../assets/images/telegram.svg";
 import viber from "../assets/images/viber.svg";
+import location from "../assets/images/location.svg";
 import whatsapp from "../assets/images/whatsapp.svg";
 import chatting from "../assets/images/chatting.svg";
+import krim from "../assets/images/krim.png";
+import sochi from "../assets/images/sochi.png";
 import TelIcon from "../assets/icons/TelIcon";
 import SectionHeader from "../components/section-header/SectionHeader";
 import { useState } from "react";
+import ShipCard from "../components/card/ShipCard";
+import Booking from "./Booking";
+import DiscountCard from "../components/discount-card/DiscountCard";
+import cardData from "../fakeData/ship-cart";
+import discountCard from "../fakeData/discount-card";
+import HomeView from "./HomeView";
+import TourCard from "../components/mashrut-card/TourCard";
+import tourData from "../fakeData/tour-data";
 const HeaderSection = () => {
   const [show, setShow] = useState(false);
 
@@ -71,7 +82,7 @@ const HeaderSection = () => {
           <img src={thick} alt="bulut img" className="w-full" />
         </div>
       </section>
-      <section className="bg-[#EFF7FC] ">
+      <section className="bg-[#EFF7FC] pt-11 pb-5">
         <div className="container pt-[11px]">
           <div className="second__section">
             <SectionHeader
@@ -80,6 +91,85 @@ const HeaderSection = () => {
               header_link=""
               arrow_show={false}
             />
+            <div className="flex items-center mt-[52px] gap-10 mb-[100px]">
+              <div className=" max-h-[260px] relative rounded-[10px]">
+                <img src={krim} alt="img" className="w-full h-full" />
+                <div className="absolute right-10 top-4 flex items-center gap-3">
+                  <img src={location} alt="tour location" />
+                  <h2 className="text-white text-[40px] leading-20 font-medium">
+                    Крым
+                  </h2>
+                </div>
+              </div>
+              <div className=" max-h-[260px] relative rounded-[10px]">
+                <img src={sochi} alt="sochi" className="w-full h-full" />
+                <div className="absolute left-10 top-4 flex items-center gap-3 ">
+                  <img src={location} alt="tour location" />
+                  <h2 className="text-white text-[40px] leading-20 font-medium">
+                    Сочи
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <SectionHeader
+            title="Популярные яхты"
+            header_url="/"
+            header_link="Открыть каталог"
+            arrow_show={true}
+          />
+
+          <div className="flex items-center gap-[10px] mt-5 mb-[122px]">
+            {cardData.map((item, i) => (
+              <ShipCard
+                key={i}
+                img__url={item.img_url}
+                card__title={item.title}
+                card__location={item.card_location}
+                card__user={item.card_users}
+                card__ship__speed={item.card_speed}
+                card__confort={item.card_confort}
+                card__discount__price={item.card_discount}
+                card__price={item.card_price}
+              />
+            ))}
+          </div>
+        </div>
+        {/* end of container */}
+
+        <Booking />
+        <div className="container pt-5">
+          <SectionHeader
+            title="Дополнительные услуги"
+            header_url="/"
+            header_link="Открыть каталог"
+            arrow_show={true}
+          />
+          <div className="grid grid-cols-3 gap-[10px] mt-5">
+            {discountCard.map((item, i) => (
+              <DiscountCard
+                key={i}
+                discount__img={item.imgUrl}
+                discount__title={item.title}
+                discount__desc={item.desc}
+                discount__price={item.price}
+              />
+            ))}
+          </div>
+        </div>
+        <HomeView />
+        <div className="container pt-[10px]">
+          <SectionHeader
+            title="Популярные маршруты"
+            header_url="/"
+            header_link="Все маршруты"
+            arrow_show={true}
+          />
+          <div className="flex gap-[10px] mt-5">
+            {tourData.map((item, i) => (
+              <TourCard key={i} item={item} />
+            ))}
           </div>
         </div>
       </section>

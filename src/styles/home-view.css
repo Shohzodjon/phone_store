@@ -1,0 +1,10 @@
+.home__view {
+  background: url(../assets/images/home-view.png), rgba(7, 55, 111, 0.9);
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  mix-blend-mode: normal;
+  background-size: cover;
+  height: 1223px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
